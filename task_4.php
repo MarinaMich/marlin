@@ -1,58 +1,43 @@
 <?php 
+    $chart = [
 
-        $my_tasks = [
+        [
             'name' => 'My Tasks',
-            'div_class' => 'd-flex mt-2',
-            'span class' => 'd-inline-block ml-auto',
             'line' => '130 / 500',
-            'progress' => 'progress progress-sm mb-3',
-            'progress-bar'=> 'progress-bar bg-fusion-400',
-            'role' => 'progressbar',
-            'style' => 'width: 65%;',
+            'bg'=> 'bg-fusion-400',
+            'width' => '65%',
             'aria-valuenow' => '65',
             'aria-valuemin' => '0',
             'aria-valuemax' => '100',
-        ];
-        $transfered = [
+        ],
+        [
             'name' => 'Transfered',
-            'div_class' => 'd-flex',
-            'span class' => 'd-inline-block ml-auto',
             'line' => '440 TB',
-            'progress' => 'progress progress-sm mb-3',
-            'progress-bar'=> 'progress-bar bg-success-500',
-            'role' => 'progressbar',
-            'style' => 'width: 34%;',
+            'bg'=> 'bg-success-500',
+            'width' => '34%',
             'aria-valuenow' => '34',
             'aria-valuemin' => '0',
             'aria-valuemax' => '100',
-        ];
-        $bugs = [
+        ],
+         [
             'name' => 'Bugs Squashed',
-            'div_class' => 'd-flex',
-            'span class' => 'd-inline-block ml-auto',
             'line' => '77%',
-            'progress' => 'progress progress-sm mb-3',
-            'progress-bar'=> 'progress-bar bg-info-400',
-            'role' => 'progressbar',
-            'style' => 'width: 77%;',
+            'bg'=> 'bg-info-400',
+            'width' => '77%',
             'aria-valuenow' => '77',
             'aria-valuemin' => '0',
             'aria-valuemax' => '100',
-        ];
-        $user = [
+        ],
+        [
             'name' => 'User Testing',
-            'div_class' => 'd-flex',
-            'span class' => 'd-inline-block ml-auto',
             'line' => '7 days',
-            'progress' => 'progress progress-sm mb-g',
-            'progress-bar'=> 'progress-bar bg-primary-300',
-            'role' => 'progressbar',
-            'style' => 'width: 84%;',
+            'bg'=> 'bg-primary-300',
+            'width' => '84%',
             'aria-valuenow' => '84',
             'aria-valuemin' => '0',
             'aria-valuemax' => '100',
-        ];
-    $chart = [$my_tasks, $transfered, $bugs, $user];    
+        ],
+   ];    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,20 +73,16 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
-                            <?php foreach ($chart as $k => $massiv): ?>
-                            <?php foreach ($massiv as $k_k => $v): ?> 
-                            <div class=<? $v['div_class']?>>
-                                <? $v['name']?>
-                                <span class="<? $v['span class']?>"> <? $v['line']?></span>
-                            </div>
-                            <div class=<? $v['progress']?>>
-                                <div class="<? $v['progress-bar']?>" role="<? $v['role']?>" style="<? $v['style']?>" aria-valuenow="<? $v['aria-valuenow']?>" aria-valuemin="<? $v['aria-valuemin']?>" aria-valuemax="<? $v['aria-valuemax']?>"></div>
-                            </div>
-                            <?php endforeach; ?> 
-                            <?php endforeach; ?>
-
-
+                            <?php foreach ($chart as $item): ?>
                            
+                            <div class="d-flex mt-2">
+                                <?php echo $item['name'];?>
+                                <span class="d-inline-block ml-auto"><?php echo $item['line'];?></span>
+                            </div>
+                            <div class="progress progress-sm mb-3">
+                                <div class="progress-bar <?php echo $item['bg'];?>" role="progressbar" style="width: <?php echo $item['width'];?>;" aria-valuenow="<?php echo $item['aria-valuenow'];?>" aria-valuemin="<?php echo $item['aria-valuemin'];?>" aria-valuemax="<?php echo $item['aria-valuemax'];?>"></div>
+                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
