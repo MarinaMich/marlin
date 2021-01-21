@@ -4,7 +4,7 @@
     $sql = "SELECT * from specialist";
     $statement = $pdo->prepare($sql);
     $statement ->execute();
-    $specialist = $statement->fetchAll(PDO::FETCH_ASSOC);        
+    $users = $statement->fetchAll(PDO::FETCH_ASSOC);        
 
 ?>
 <!DOCTYPE html>
@@ -42,19 +42,20 @@
                     <div class="panel-container show">
                         <div class="panel-content">
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
-                            <?php foreach($specialist as $item):?>
+                            <?php foreach($users as $user):?>
                                 <div class="
-                                    <? echo $item['status'] == 'banned' ? 'banned' : '' ?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                    <img src="<?echo $item['img']?>" alt="<?echo $item['name']?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                                <?// Можно сделать вывод забаненных пользователей через echo $item['status'] == true ? banned : ' ', если в БД поменять значение status на бинарное ?>
+                                    <? echo $user['status'] == 'banned' ? 'banned' : '' ?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                    <img src="<?echo $user['img']?>" alt="<?echo $user['name']?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                     <div class="ml-2 mr-3">
                                         <h5 class="m-0">
-                                            <?echo $item['info']?>
+                                            <?echo $user['info']?>
                                             <small class="m-0 fw-300">
-                                                <?echo $item['role']?>
+                                                <?echo $user['role']?>
                                             </small>
                                         </h5>
-                                        <a href="<?echo $item['link_tw']?>" class="text-info fs-sm" target="_blank"><?echo $item['tw']?></a> -
-                                        <a href="<?echo $item['link']?>" class="text-info fs-sm" target="_blank" title="<?echo $item['title']?>"><i class="fal fa-envelope"></i></a>
+                                        <a href="<?echo $user['link_tw']?>" class="text-info fs-sm" target="_blank"><?echo $user['tw']?></a> -
+                                        <a href="<?echo $user['link']?>" class="text-info fs-sm" target="_blank" title="<?echo $user['title']?>"><i class="fal fa-envelope"></i></a>
                                     </div>
                                 </div>
                             <?php endforeach;?>    
