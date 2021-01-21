@@ -53,7 +53,7 @@ session_start();
                                     <?php endif;?>
                                     <form action="save_10.php" method="post">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control"name="text">
+                                        <input type="text" id="simpleinput" class="form-control" name="text">
                                         <button class="btn btn-success mt-3" type="submit">Submit</button>
                                     </form>
                                 </div>
