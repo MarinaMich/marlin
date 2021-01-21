@@ -1,6 +1,18 @@
 <?php 
-
-$list = ['Reports', 'Analytics', 'Export', 'Storage'];
+    $list = [
+        ['name' => 'Reports',
+         'tags' => 'reports file'
+        ], 
+        ['name' => 'Analytics',
+         'tags' => 'analytics graphs'
+        ], 
+        ['name' => 'Export',
+         'tags' => 'export download'
+        ], 
+        ['name' => 'Analytics',
+         'tags' => 'storage'
+        ], 
+    ];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +62,7 @@ $list = ['Reports', 'Analytics', 'Export', 'Storage'];
                                         <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
                                             <?php foreach ($list as $item):?>
                                                 <li class="list-group-item">
-                                                    <span data-filter-tags="reports file"><?php echo $item ?></span><br/>
+                                                    <span data-filter-tags="<?php echo $item['tags']; ?>"><?php echo $item['name']; ?></span><br/>
                                                 </li>
                                             <?php endforeach; ?> 
                                         </ul>
