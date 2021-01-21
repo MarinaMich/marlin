@@ -8,9 +8,9 @@
             'role' => 'Lead Author',
             'https_tw' => 'https://twitter.com/@myplaneticket',
             'twitter' => '@myplaneticket',
-            'https' => 'https://wrapbootstrap.com/user/Walapa',
+            'profile_link' => 'https://wrapbootstrap.com/user/Walapa',
             'title' => 'Contact Sunny',
-            'ban' => ' ',
+            'ban' => false
         ],
         [
             'img' => 'img/demo/authors/josh.png',
@@ -19,9 +19,9 @@
             'role' => 'Partner &amp; Contributor',
             'https_tw' => 'https://twitter.com/@atlantez',
             'twitter' => '@atlantez',
-            'https' => 'https://wrapbootstrap.com/user/Walapa',
+            'profile_link' => 'https://wrapbootstrap.com/user/Walapa',
             'title' => 'Contact Jos',
-            'ban' => ' ',
+            'ban' => false
         ],
         [
             'img' => 'img/demo/authors/jovanni.png',
@@ -30,9 +30,9 @@
             'role' => 'Partner &amp; Contributor',
             'https_tw' => 'https://twitter.com/@lodev09',
             'twitter' => '@lodev09',
-            'https' => 'https://wrapbootstrap.com/user/lodev09',
+            'profile_link' => 'https://wrapbootstrap.com/user/lodev09',
             'title' => 'Contact Jovanni',
-            'ban' => 'banned',
+            'ban' => true
         ],
         [
             'img' => 'img/demo/authors/roberto.png',
@@ -41,9 +41,9 @@
             'role' => 'Partner &amp; Contributor',
             'https_tw' => 'https://twitter.com/@sildur',
             'twitter' => '@sildur',
-            'https' => 'https://wrapbootstrap.com/user/sildur',
+            'profile_link' => 'https://wrapbootstrap.com/user/sildur',
             'title' => 'Contact Roberto',
-            'ban' => 'banned',
+            'ban' => true
         ],
     ]; 
 
@@ -85,7 +85,7 @@
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
                             <?php foreach($list as $item):?>
                                 <div class="
-                                    <? echo $item['ban'] == 'banned' ? 'banned' : '' ?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                    <? echo $item['ban'] == true ? banned : ' '?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                     <img src="<?echo $item['img']?>" alt="<?echo $item['alt']?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                     <div class="ml-2 mr-3">
                                         <h5 class="m-0">
