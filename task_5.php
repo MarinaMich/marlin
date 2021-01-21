@@ -8,7 +8,7 @@
             'role' => 'Lead Author',
             'https_tw' => 'https://twitter.com/@myplaneticket',
             'twitter' => '@myplaneticket',
-            'https' => 'https://wrapbootstrap.com/user/Walapa',
+            'profile_link' => 'https://wrapbootstrap.com/user/Walapa',
             'title' => 'Contact Sunny',
         ],
         [
@@ -18,7 +18,7 @@
             'role' => 'Partner &amp; Contributor',
             'https_tw' => 'https://twitter.com/@atlantez',
             'twitter' => '@atlantez',
-            'https' => 'https://wrapbootstrap.com/user/Walapa',
+            'profile_link' => 'https://wrapbootstrap.com/user/Walapa',
             'title' => 'Contact Jos',
         ],
         [
@@ -28,7 +28,7 @@
             'role' => 'Partner &amp; Contributor',
             'https_tw' => 'https://twitter.com/@lodev09',
             'twitter' => '@lodev09',
-            'https' => 'https://wrapbootstrap.com/user/lodev09',
+            'profile_link' => 'https://wrapbootstrap.com/user/lodev09',
             'title' => 'Contact Jovanni',
         ],
         [
@@ -38,7 +38,7 @@
             'role' => 'Partner &amp; Contributor',
             'https_tw' => 'https://twitter.com/@sildur',
             'twitter' => '@sildur',
-            'https' => 'https://wrapbootstrap.com/user/sildur',
+            'profile_link' => 'https://wrapbootstrap.com/user/sildur',
             'title' => 'Contact Roberto',
         ],
     ]; 
@@ -90,7 +90,7 @@
                                             </small>
                                         </h5>
                                         <a href="<?echo $item['https_tw']?>" class="text-info fs-sm" target="_blank"><?echo $item['twitter']?></a> -
-                                        <a href="<?echo $item['https']?>" class="text-info fs-sm" target="_blank" title="<?echo $item['title']?>"><i class="fal fa-envelope"></i></a>
+                                        <a href="<?echo $item['profile_link']?>" class="text-info fs-sm" target="_blank" title="<?echo $item['title']?>"><i class="fal fa-envelope"></i></a>
                                     </div>
                                 </div>
                             <?php endforeach;?>    
