@@ -1,8 +1,21 @@
 <?php 
-    $breadcrumbs = [
-        'Главная'=> 'Url::toRoute("#")',
-        'PHP'=> 'Url::toRoute("#")',
-        'Функции'=> '',
+    $breadcrumbs = 
+    [
+        [ 
+            'title'=> 'Главная',
+            'href'=> '#',
+            'is_link'=> true
+        ],
+        [ 
+            'title'=> 'PHP',
+            'href'=> '#',
+            'is_link'=> true
+        ],
+        [ 
+            'title'=> 'Функции',
+            'href'=> '',
+            'is_link'=> false
+        ],
     ];
 ?>
 
@@ -41,18 +54,12 @@
                     <div class="panel-container show">
                         <div class="panel-content">
                             <ol class="breadcrumb page-breadcrumb">
-                                <?php foreach ($breadcrumbs as $k => $v): ?>
-                                <li class="breadcrumb-item">
-                                    <? if(!empty($v)): ?>
-                                    <a href=
-                                    <? echo $v ?>>
-                                    <? echo $k ?>
-                                    </a>
-                                    <? else : ?>
-                                    <? echo $k ?>
-                                    <?php endif; ?>
-                                </li>
-                                
+                                <?php foreach ($breadcrumbs as $item): ?>
+                                    <?php if($item['is_link']): ?>
+                                        <li class="breadcrumb-item"><a href="<? echo $item['href']?>"><? echo $item['title']?></a></li>
+                                    <?php else: ?>
+                                        <li class="breadcrumb-item active"><? echo $item['title']?></li>
+                                    <?php endif; ?>  
                                 <?php endforeach; ?> 
                             </ol>
                         </div>
